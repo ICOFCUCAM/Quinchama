@@ -44,7 +44,7 @@ Deno.serve(async (req) => {
 
     // 1. Create admin profile
     const { data: adminProfile } = await supabase.from('profiles').insert({
-      email: 'admin@bsme.edu',
+      email: 'admin@quinchama.edu',
       full_name: 'Dr. Grace Nkemba',
       role: 'admin',
       phone: '+237670001000'
@@ -52,18 +52,18 @@ Deno.serve(async (req) => {
 
     // 2. Create teacher profiles and teachers
     const teacherData = [
-      { code: 'T001', fn: 'Grace', ln: 'Nkemba', email: 'grace.nkemba@bsme.edu', phone: '+237670001001', subjects: ['English Language', 'Social Studies'], classes: ['prenursery-en'], section: 'english', salary: 180000, hire: '2022-09-01' },
-      { code: 'T002', fn: 'Marie', ln: 'Tchinda', email: 'marie.tchinda@bsme.edu', phone: '+237670001002', subjects: ['Langue Française', 'Études Sociales'], classes: ['prenursery-fr'], section: 'french', salary: 180000, hire: '2021-09-01' },
-      { code: 'T003', fn: 'John', ln: 'Okafor', email: 'john.okafor@bsme.edu', phone: '+237670001003', subjects: ['Mathematics', 'General Science'], classes: ['nursery1-en', 'nursery2-en'], section: 'english', salary: 200000, hire: '2020-09-01' },
-      { code: 'T004', fn: 'Sylvie', ln: 'Diallo', email: 'sylvie.diallo@bsme.edu', phone: '+237670001004', subjects: ['Mathématiques', 'Sciences Générales'], classes: ['nursery1-fr', 'nursery2-fr'], section: 'french', salary: 200000, hire: '2020-09-01' },
-      { code: 'T005', fn: 'Peter', ln: 'Mbeki', email: 'peter.mbeki@bsme.edu', phone: '+237670001005', subjects: ['English Language', 'Creative Arts'], classes: ['primary1-en', 'primary2-en'], section: 'english', salary: 220000, hire: '2019-09-01' },
-      { code: 'T006', fn: 'Claudine', ln: 'Foncha', email: 'claudine.foncha@bsme.edu', phone: '+237670001006', subjects: ['Langue Française', 'Arts Créatifs'], classes: ['primary1-fr', 'primary2-fr'], section: 'french', salary: 220000, hire: '2019-09-01' },
-      { code: 'T007', fn: 'David', ln: 'Balogun', email: 'david.balogun@bsme.edu', phone: '+237670001007', subjects: ['Mathematics', 'ICT'], classes: ['primary3-en', 'primary4-en'], section: 'english', salary: 240000, hire: '2018-09-01' },
-      { code: 'T008', fn: 'Aminata', ln: 'Kamara', email: 'aminata.kamara@bsme.edu', phone: '+237670001008', subjects: ['Mathématiques', 'Informatique'], classes: ['primary3-fr', 'primary4-fr'], section: 'french', salary: 240000, hire: '2018-09-01' },
-      { code: 'T009', fn: 'Samuel', ln: 'Mensah', email: 'samuel.mensah@bsme.edu', phone: '+237670001009', subjects: ['English Language', 'General Science', 'Physical Education'], classes: ['primary5-en', 'primary6-en'], section: 'english', salary: 260000, hire: '2017-09-01' },
-      { code: 'T010', fn: 'Fatima', ln: 'Traore', email: 'fatima.traore@bsme.edu', phone: '+237670001010', subjects: ['Langue Française', 'Sciences Générales', 'Éducation Physique'], classes: ['primary5-fr', 'primary6-fr'], section: 'french', salary: 260000, hire: '2017-09-01' },
-      { code: 'T011', fn: 'Emmanuel', ln: 'Atanga', email: 'emmanuel.atanga@bsme.edu', phone: '+237670001011', subjects: ['Music', 'Moral Education'], classes: ['primary1-en', 'primary2-en', 'primary3-en'], section: 'english', salary: 190000, hire: '2023-01-01' },
-      { code: 'T012', fn: 'Berthe', ln: 'Ndongo', email: 'berthe.ndongo@bsme.edu', phone: '+237670001012', subjects: ['Musique', 'Éducation Morale'], classes: ['primary1-fr', 'primary2-fr', 'primary3-fr'], section: 'french', salary: 190000, hire: '2023-01-01' },
+      { code: 'T001', fn: 'Grace', ln: 'Nkemba', email: 'grace.nkemba@quinchama.edu', phone: '+237670001001', subjects: ['English Language', 'Social Studies'], classes: ['prenursery-en'], section: 'english', salary: 180000, hire: '2022-09-01' },
+      { code: 'T002', fn: 'Marie', ln: 'Tchinda', email: 'marie.tchinda@quinchama.edu', phone: '+237670001002', subjects: ['Langue Française', 'Études Sociales'], classes: ['prenursery-fr'], section: 'french', salary: 180000, hire: '2021-09-01' },
+      { code: 'T003', fn: 'John', ln: 'Okafor', email: 'john.okafor@quinchama.edu', phone: '+237670001003', subjects: ['Mathematics', 'General Science'], classes: ['nursery1-en', 'nursery2-en'], section: 'english', salary: 200000, hire: '2020-09-01' },
+      { code: 'T004', fn: 'Sylvie', ln: 'Diallo', email: 'sylvie.diallo@quinchama.edu', phone: '+237670001004', subjects: ['Mathématiques', 'Sciences Générales'], classes: ['nursery1-fr', 'nursery2-fr'], section: 'french', salary: 200000, hire: '2020-09-01' },
+      { code: 'T005', fn: 'Peter', ln: 'Mbeki', email: 'peter.mbeki@quinchama.edu', phone: '+237670001005', subjects: ['English Language', 'Creative Arts'], classes: ['primary1-en', 'primary2-en'], section: 'english', salary: 220000, hire: '2019-09-01' },
+      { code: 'T006', fn: 'Claudine', ln: 'Foncha', email: 'claudine.foncha@quinchama.edu', phone: '+237670001006', subjects: ['Langue Française', 'Arts Créatifs'], classes: ['primary1-fr', 'primary2-fr'], section: 'french', salary: 220000, hire: '2019-09-01' },
+      { code: 'T007', fn: 'David', ln: 'Balogun', email: 'david.balogun@quinchama.edu', phone: '+237670001007', subjects: ['Mathematics', 'ICT'], classes: ['primary3-en', 'primary4-en'], section: 'english', salary: 240000, hire: '2018-09-01' },
+      { code: 'T008', fn: 'Aminata', ln: 'Kamara', email: 'aminata.kamara@quinchama.edu', phone: '+237670001008', subjects: ['Mathématiques', 'Informatique'], classes: ['primary3-fr', 'primary4-fr'], section: 'french', salary: 240000, hire: '2018-09-01' },
+      { code: 'T009', fn: 'Samuel', ln: 'Mensah', email: 'samuel.mensah@quinchama.edu', phone: '+237670001009', subjects: ['English Language', 'General Science', 'Physical Education'], classes: ['primary5-en', 'primary6-en'], section: 'english', salary: 260000, hire: '2017-09-01' },
+      { code: 'T010', fn: 'Fatima', ln: 'Traore', email: 'fatima.traore@quinchama.edu', phone: '+237670001010', subjects: ['Langue Française', 'Sciences Générales', 'Éducation Physique'], classes: ['primary5-fr', 'primary6-fr'], section: 'french', salary: 260000, hire: '2017-09-01' },
+      { code: 'T011', fn: 'Emmanuel', ln: 'Atanga', email: 'emmanuel.atanga@quinchama.edu', phone: '+237670001011', subjects: ['Music', 'Moral Education'], classes: ['primary1-en', 'primary2-en', 'primary3-en'], section: 'english', salary: 190000, hire: '2023-01-01' },
+      { code: 'T012', fn: 'Berthe', ln: 'Ndongo', email: 'berthe.ndongo@quinchama.edu', phone: '+237670001012', subjects: ['Musique', 'Éducation Morale'], classes: ['primary1-fr', 'primary2-fr', 'primary3-fr'], section: 'french', salary: 190000, hire: '2023-01-01' },
     ];
 
     // Create teacher profiles
@@ -92,7 +92,7 @@ Deno.serve(async (req) => {
 
     // 3. Create parent profile
     const { data: parentProfile } = await supabase.from('profiles').insert({
-      email: 'parent@bsme.edu',
+      email: 'parent@quinchama.edu',
       full_name: 'Amara Nkemba',
       role: 'parent',
       phone: '+237670009001'
@@ -112,7 +112,7 @@ Deno.serve(async (req) => {
       const section = i % 2 === 0 ? 'english' : 'french';
       const parentFn = firstNames[(i + 5) % firstNames.length];
       studentRows.push({
-        student_code: `BSME-2026-S${String(i + 1).padStart(4, '0')}`,
+        student_code: `QA-2026-S${String(i + 1).padStart(4, '0')}`,
         first_name: fn,
         last_name: ln,
         date_of_birth: `${2018 + (i % 5)}-${String(1 + (i % 12)).padStart(2, '0')}-${String(1 + (i % 28)).padStart(2, '0')}`,

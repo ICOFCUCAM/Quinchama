@@ -49,25 +49,25 @@ Deno.serve(async (req) => {
 
     // Profiles
     const { data: profs, error: e1 } = await supabase.from('profiles').insert([
-      { email: 'admin@bsme.edu', full_name: 'Dr. Grace Nkemba', role: 'admin', phone: '+237670001000' },
-      { email: 'parent@bsme.edu', full_name: 'Amara Nkemba', role: 'parent', phone: '+237670009001' },
+      { email: 'admin@quinchama.edu', full_name: 'Dr. Grace Nkemba', role: 'admin', phone: '+237670001000' },
+      { email: 'parent@quinchama.edu', full_name: 'Amara Nkemba', role: 'parent', phone: '+237670009001' },
     ]).select();
     if (e1) errs.push('profiles:' + e1.message);
 
     // Teachers
     const td = [
-      { teacher_code:'T001',first_name:'Grace',last_name:'Nkemba',email:'grace.nkemba@bsme.edu',phone:'+237670001001',photo:IMGS_T[0],subjects:['English Language','Social Studies'],assigned_classes:['prenursery-en'],section:'english',salary:180000,hire_date:'2022-09-01',status:'active'},
-      { teacher_code:'T002',first_name:'Marie',last_name:'Tchinda',email:'marie.tchinda@bsme.edu',phone:'+237670001002',photo:IMGS_T[1],subjects:['Langue Française','Études Sociales'],assigned_classes:['prenursery-fr'],section:'french',salary:180000,hire_date:'2021-09-01',status:'active'},
-      { teacher_code:'T003',first_name:'John',last_name:'Okafor',email:'john.okafor@bsme.edu',phone:'+237670001003',photo:IMGS_T[2],subjects:['Mathematics','General Science'],assigned_classes:['nursery1-en','nursery2-en'],section:'english',salary:200000,hire_date:'2020-09-01',status:'active'},
-      { teacher_code:'T004',first_name:'Sylvie',last_name:'Diallo',email:'sylvie.diallo@bsme.edu',phone:'+237670001004',photo:IMGS_T[3],subjects:['Mathématiques','Sciences Générales'],assigned_classes:['nursery1-fr','nursery2-fr'],section:'french',salary:200000,hire_date:'2020-09-01',status:'active'},
-      { teacher_code:'T005',first_name:'Peter',last_name:'Mbeki',email:'peter.mbeki@bsme.edu',phone:'+237670001005',photo:IMGS_T[0],subjects:['English Language','Creative Arts'],assigned_classes:['primary1-en','primary2-en'],section:'english',salary:220000,hire_date:'2019-09-01',status:'active'},
-      { teacher_code:'T006',first_name:'Claudine',last_name:'Foncha',email:'claudine.foncha@bsme.edu',phone:'+237670001006',photo:IMGS_T[1],subjects:['Langue Française','Arts Créatifs'],assigned_classes:['primary1-fr','primary2-fr'],section:'french',salary:220000,hire_date:'2019-09-01',status:'active'},
-      { teacher_code:'T007',first_name:'David',last_name:'Balogun',email:'david.balogun@bsme.edu',phone:'+237670001007',photo:IMGS_T[2],subjects:['Mathematics','ICT'],assigned_classes:['primary3-en','primary4-en'],section:'english',salary:240000,hire_date:'2018-09-01',status:'active'},
-      { teacher_code:'T008',first_name:'Aminata',last_name:'Kamara',email:'aminata.kamara@bsme.edu',phone:'+237670001008',photo:IMGS_T[3],subjects:['Mathématiques','Informatique'],assigned_classes:['primary3-fr','primary4-fr'],section:'french',salary:240000,hire_date:'2018-09-01',status:'active'},
-      { teacher_code:'T009',first_name:'Samuel',last_name:'Mensah',email:'samuel.mensah@bsme.edu',phone:'+237670001009',photo:IMGS_T[0],subjects:['English Language','General Science','Physical Education'],assigned_classes:['primary5-en','primary6-en'],section:'english',salary:260000,hire_date:'2017-09-01',status:'active'},
-      { teacher_code:'T010',first_name:'Fatima',last_name:'Traore',email:'fatima.traore@bsme.edu',phone:'+237670001010',photo:IMGS_T[1],subjects:['Langue Française','Sciences Générales'],assigned_classes:['primary5-fr','primary6-fr'],section:'french',salary:260000,hire_date:'2017-09-01',status:'active'},
-      { teacher_code:'T011',first_name:'Emmanuel',last_name:'Atanga',email:'emmanuel.atanga@bsme.edu',phone:'+237670001011',photo:IMGS_T[2],subjects:['Music','Moral Education'],assigned_classes:['primary1-en','primary2-en','primary3-en'],section:'english',salary:190000,hire_date:'2023-01-01',status:'active'},
-      { teacher_code:'T012',first_name:'Berthe',last_name:'Ndongo',email:'berthe.ndongo@bsme.edu',phone:'+237670001012',photo:IMGS_T[3],subjects:['Musique','Éducation Morale'],assigned_classes:['primary1-fr','primary2-fr','primary3-fr'],section:'french',salary:190000,hire_date:'2023-01-01',status:'active'},
+      { teacher_code:'T001',first_name:'Grace',last_name:'Nkemba',email:'grace.nkemba@quinchama.edu',phone:'+237670001001',photo:IMGS_T[0],subjects:['English Language','Social Studies'],assigned_classes:['prenursery-en'],section:'english',salary:180000,hire_date:'2022-09-01',status:'active'},
+      { teacher_code:'T002',first_name:'Marie',last_name:'Tchinda',email:'marie.tchinda@quinchama.edu',phone:'+237670001002',photo:IMGS_T[1],subjects:['Langue Française','Études Sociales'],assigned_classes:['prenursery-fr'],section:'french',salary:180000,hire_date:'2021-09-01',status:'active'},
+      { teacher_code:'T003',first_name:'John',last_name:'Okafor',email:'john.okafor@quinchama.edu',phone:'+237670001003',photo:IMGS_T[2],subjects:['Mathematics','General Science'],assigned_classes:['nursery1-en','nursery2-en'],section:'english',salary:200000,hire_date:'2020-09-01',status:'active'},
+      { teacher_code:'T004',first_name:'Sylvie',last_name:'Diallo',email:'sylvie.diallo@quinchama.edu',phone:'+237670001004',photo:IMGS_T[3],subjects:['Mathématiques','Sciences Générales'],assigned_classes:['nursery1-fr','nursery2-fr'],section:'french',salary:200000,hire_date:'2020-09-01',status:'active'},
+      { teacher_code:'T005',first_name:'Peter',last_name:'Mbeki',email:'peter.mbeki@quinchama.edu',phone:'+237670001005',photo:IMGS_T[0],subjects:['English Language','Creative Arts'],assigned_classes:['primary1-en','primary2-en'],section:'english',salary:220000,hire_date:'2019-09-01',status:'active'},
+      { teacher_code:'T006',first_name:'Claudine',last_name:'Foncha',email:'claudine.foncha@quinchama.edu',phone:'+237670001006',photo:IMGS_T[1],subjects:['Langue Française','Arts Créatifs'],assigned_classes:['primary1-fr','primary2-fr'],section:'french',salary:220000,hire_date:'2019-09-01',status:'active'},
+      { teacher_code:'T007',first_name:'David',last_name:'Balogun',email:'david.balogun@quinchama.edu',phone:'+237670001007',photo:IMGS_T[2],subjects:['Mathematics','ICT'],assigned_classes:['primary3-en','primary4-en'],section:'english',salary:240000,hire_date:'2018-09-01',status:'active'},
+      { teacher_code:'T008',first_name:'Aminata',last_name:'Kamara',email:'aminata.kamara@quinchama.edu',phone:'+237670001008',photo:IMGS_T[3],subjects:['Mathématiques','Informatique'],assigned_classes:['primary3-fr','primary4-fr'],section:'french',salary:240000,hire_date:'2018-09-01',status:'active'},
+      { teacher_code:'T009',first_name:'Samuel',last_name:'Mensah',email:'samuel.mensah@quinchama.edu',phone:'+237670001009',photo:IMGS_T[0],subjects:['English Language','General Science','Physical Education'],assigned_classes:['primary5-en','primary6-en'],section:'english',salary:260000,hire_date:'2017-09-01',status:'active'},
+      { teacher_code:'T010',first_name:'Fatima',last_name:'Traore',email:'fatima.traore@quinchama.edu',phone:'+237670001010',photo:IMGS_T[1],subjects:['Langue Française','Sciences Générales'],assigned_classes:['primary5-fr','primary6-fr'],section:'french',salary:260000,hire_date:'2017-09-01',status:'active'},
+      { teacher_code:'T011',first_name:'Emmanuel',last_name:'Atanga',email:'emmanuel.atanga@quinchama.edu',phone:'+237670001011',photo:IMGS_T[2],subjects:['Music','Moral Education'],assigned_classes:['primary1-en','primary2-en','primary3-en'],section:'english',salary:190000,hire_date:'2023-01-01',status:'active'},
+      { teacher_code:'T012',first_name:'Berthe',last_name:'Ndongo',email:'berthe.ndongo@quinchama.edu',phone:'+237670001012',photo:IMGS_T[3],subjects:['Musique','Éducation Morale'],assigned_classes:['primary1-fr','primary2-fr','primary3-fr'],section:'french',salary:190000,hire_date:'2023-01-01',status:'active'},
     ];
     const { data: teachers, error: e2 } = await supabase.from('teachers').insert(td).select();
     if (e2) errs.push('teachers:' + e2.message);
@@ -81,7 +81,7 @@ Deno.serve(async (req) => {
     const sRows = [];
     for (let i = 0; i < 36; i++) {
       const fn = fns[i%fns.length], ln = lns[i%lns.length], lv = lvls[i%lvls.length], sec = i%2===0?'english':'french';
-      sRows.push({ student_code:`BSME-2026-S${String(i+1).padStart(4,'0')}`, first_name:fn, last_name:ln, date_of_birth:`${2018+(i%5)}-${String(1+(i%12)).padStart(2,'0')}-${String(1+(i%28)).padStart(2,'0')}`, gender:i%2===0?'M':'F', level:lv, section:sec, parent_name:`${fns[(i+5)%fns.length]} ${ln}`, parent_phone:`+23767${String(1000000+i*111).padStart(7,'0')}`, parent_email:`${fn.toLowerCase()}.${ln.toLowerCase()}@email.com`, payment_ref:`PAY-${ln.toUpperCase().slice(0,3)}-${String(i+1).padStart(4,'0')}`, photo:IMGS_S[i%IMGS_S.length], enrollment_date:'2025-09-01', status:'active' });
+      sRows.push({ student_code:`QA-2026-S${String(i+1).padStart(4,'0')}`, first_name:fn, last_name:ln, date_of_birth:`${2018+(i%5)}-${String(1+(i%12)).padStart(2,'0')}-${String(1+(i%28)).padStart(2,'0')}`, gender:i%2===0?'M':'F', level:lv, section:sec, parent_name:`${fns[(i+5)%fns.length]} ${ln}`, parent_phone:`+23767${String(1000000+i*111).padStart(7,'0')}`, parent_email:`${fn.toLowerCase()}.${ln.toLowerCase()}@email.com`, payment_ref:`PAY-${ln.toUpperCase().slice(0,3)}-${String(i+1).padStart(4,'0')}`, photo:IMGS_S[i%IMGS_S.length], enrollment_date:'2025-09-01', status:'active' });
     }
     const { data: students, error: e3 } = await supabase.from('students').insert(sRows).select();
     if (e3) errs.push('students:' + e3.message);
