@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppContext } from '@/contexts/AppContext';
+import { useAppContext, Page } from '@/contexts/AppContext';
 import { t } from '@/lib/i18n';
 import { formatCFA, LEVELS, getLevelLabel } from '@/lib/schoolData';
 import {
