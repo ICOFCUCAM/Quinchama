@@ -1,10 +1,14 @@
 "use client"
 
-import * as React from "react"
 import { createContext, useContext, useEffect, useState } from "react"
-import { type ThemeProviderProps } from "next-themes"
 
 type Theme = "dark" | "light" | "system"
+
+type ThemeProviderProps = {
+  children: React.ReactNode
+  defaultTheme?: Theme
+  [key: string]: unknown
+}
 
 type ThemeContextType = {
   theme: Theme
@@ -16,32 +20,25 @@ const ThemeContext = createContext<ThemeContextType | null>(null)
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  value: _value,
-  ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme")
-      return (savedTheme && (savedTheme === "dark" || savedTheme === "light" || savedTheme === "system")
+      return (savedTheme === "dark" || savedTheme === "light" || savedTheme === "system")
         ? savedTheme
-        : defaultTheme) as Theme
+        : defaultTheme
     }
-    return defaultTheme as Theme
+    return defaultTheme
   })
 
   useEffect(() => {
     const root = window.document.documentElement
     root.classList.remove("light", "dark")
-
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light"
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
       root.classList.add(systemTheme)
       return
     }
-
     root.classList.add(theme)
   }, [theme])
 
@@ -53,17 +50,11 @@ export function ThemeProvider({
     },
   }
 
-  return (
-    <ThemeContext.Provider value={value} {...props}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext)
-  if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider")
-  }
+  if (!context) throw new Error("useTheme must be used within a ThemeProvider")
   return context
 }
